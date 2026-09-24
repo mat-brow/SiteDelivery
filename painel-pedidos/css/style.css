@@ -1,0 +1,37 @@
+:root {
+    --tinta: #1e293b;
+    --fundo: #f3f5f8;
+    --marca: #0f766e;
+    --marca-escura: #0b5e58;
+}
+body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--fundo); color: var(--tinta); }
+
+.topo { background: var(--tinta); }
+.topo .nav-link { color: #cbd5e1; transition: color .2s; }
+.topo .nav-link:hover, .topo .nav-link.active { color: #fff; }
+
+.painel { border: 0; border-radius: 12px; box-shadow: 0 1px 3px rgba(15, 23, 42, .08); }
+
+.btn-brand { background: var(--marca); border-color: var(--marca); color: #fff; transition: transform .15s, background .2s; }
+.btn-brand:hover { background: var(--marca-escura); border-color: var(--marca-escura); color: #fff; transform: translateY(-1px); }
+.form-control:focus, .form-select:focus { border-color: var(--marca); box-shadow: 0 0 0 .2rem rgba(15, 118, 110, .15); }
+a { color: var(--marca); }
+
+/* Cards de resumo */
+.resumo .numero { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+.resumo.destaque { background: var(--marca); color: #fff; }
+.resumo { transition: transform .2s; }
+.resumo:hover { transform: translateY(-3px); }
+
+/* Tabela: linhas entram em sequência ao carregar */
+.table > :not(caption) > * > * { padding: .85rem .9rem; }
+.table thead th { font-size: .8rem; color: #64748b; font-weight: 600; border-bottom-width: 1px; }
+.itens { max-width: 280px; font-size: .9rem; color: #475569; }
+.linha { animation: entrar .4s ease both; animation-delay: calc(var(--i) * 45ms); }
+@keyframes entrar { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.badge { font-weight: 600; padding: .45em .7em; }
+
+@media (prefers-reduced-motion: reduce) {
+    .linha, .resumo, .btn-brand { animation: none; transition: none; }
+}
